@@ -10,7 +10,7 @@ const GameBoard = () => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
-  const [attempts, setAttempts] = useState(8);
+  const [attempts, setAttempts] = useState(10);
   const [timeLeft, setTimeLeft] = useState(90);
   const [status, setStatus] = useState("");
   const [showParticles, setShowParticles] = useState(false);
@@ -43,7 +43,7 @@ const GameBoard = () => {
     setCards(shuffledCards);
     setFlippedCards([]);
     setMatchedPairs(0);
-    setAttempts(8);
+    setAttempts(10);
     setTimeLeft(90);
     setStatus("");
     setShowParticles(false);
@@ -57,7 +57,7 @@ const GameBoard = () => {
       }));
       setCards(hiddenCards);
       setIsPreviewing(false);
-    }, 10000);
+    }, 12000);
   };
 
   const handleCardClick = (cardId) => {
@@ -135,11 +135,11 @@ const GameBoard = () => {
 
       {/* Indicador de erros */}
       <div className="flex justify-center my-4">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div
             key={i}
             className={`w-4 h-4 mx-1 rounded-full ${
-              i < 8 - attempts ? "bg-red-500" : "bg-green-500"
+              i < 10 - attempts ? "bg-red-500" : "bg-green-500"
             }`}
           ></div>
         ))}
