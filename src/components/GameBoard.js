@@ -11,7 +11,7 @@ const GameBoard = () => {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [attempts, setAttempts] = useState(8);
-  const [timeLeft, setTimeLeft] = useState(45);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [status, setStatus] = useState("");
   const [showParticles, setShowParticles] = useState(false);
   const [isPreviewing, setIsPreviewing] = useState(true);
@@ -44,7 +44,7 @@ const GameBoard = () => {
     setFlippedCards([]);
     setMatchedPairs(0);
     setAttempts(8);
-    setTimeLeft(45);
+    setTimeLeft(60);
     setStatus("");
     setShowParticles(false);
     setIsPreviewing(true);
@@ -128,7 +128,7 @@ const GameBoard = () => {
         <motion.div
           className="h-[2160px] bg-blue-500"
           initial={{ width: "100%" }}
-          animate={{ width: `${(timeLeft / 45) * 100}%` }}
+          animate={{ width: `${(timeLeft / 60) * 100}%` }}
           transition={{ duration: 0.1 }}
         ></motion.div>
       </div>
